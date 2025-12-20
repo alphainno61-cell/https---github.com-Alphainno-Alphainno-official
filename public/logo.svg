@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Alphainno Logo</title>
+  <desc id="desc">Four rounded indigo squares each containing a colored circle: blue, purple, stone, and light blue.</desc>
+  <defs>
+    <clipPath id="clip">
+      <rect width="512" height="512" rx="32" ry="32" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="512" height="512" fill="#322f64" />
+    <rect x="32" y="32" width="208" height="208" rx="20" fill="#322f64" />
+    <rect x="272" y="32" width="208" height="208" rx="20" fill="#322f64" />
+    <rect x="32" y="272" width="208" height="208" rx="20" fill="#322f64" />
+    <rect x="272" y="272" width="208" height="208" rx="20" fill="#322f64" />
+
+    <circle cx="136" cy="136" r="92" fill="#0ea5ff" />
+    <circle cx="376" cy="136" r="92" fill="#a24bff" />
+    <circle cx="136" cy="376" r="92" fill="#dad5d4" />
+    <circle cx="376" cy="376" r="92" fill="#b9e5ff" />
+  </g>
+</svg>
