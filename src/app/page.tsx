@@ -176,16 +176,16 @@ export default function Home() {
       <section className="flex items-center justify-between text-xs text-gray-600">
         <div className="flex gap-4">
           <Link href="/about" className="hover:text-black">
-            About
+            Coodmi
           </Link>
           <Link href="/products" className="hover:text-black">
-            Products
+            Anigra
           </Link>
           <Link href="/news" className="hover:text-black">
-            News
+            ADS
           </Link>
-          <Link href="/support" className="hover:text-black">
-            Support
+          <Link href="/alpha-store" className="hover:text-black">
+            Alpha Store
           </Link>
         </div>
         <div className="flex items-center gap-3">
@@ -236,15 +236,51 @@ export default function Home() {
               {["sky", "slate", "yellow"].map((tone, idx) => (
                 <div
                   key={tone}
-                  className={`aspect-[2/3] rounded-3xl border shadow-md ${
-                    idx === 0
-                      ? "bg-gradient-to-b from-sky-100 to-white border-sky-200"
-                      : idx === 1
-                        ? "bg-gradient-to-b from-slate-100 to-white border-slate-200"
-                        : "bg-gradient-to-b from-amber-100 to-white border-amber-200"
-                  } flex items-end justify-center pb-4`}
+                  className="aspect-[2/3] rounded-3xl border shadow-md overflow-hidden border-slate-200 relative"
                 >
-                  <div className="h-10 w-20 rounded-full bg-white/80 border border-gray-200 shadow-sm" />
+                  {idx === 0 ? (
+                    <>
+                      <Image
+                        src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&h=1200&auto=format&fit=crop"
+                        alt="Cloud Technology"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div className="w-20 h-6 rounded-full bg-white/20 shadow-xl border border-white/30 backdrop-blur-md bg-gradient-to-r from-white/25 to-white/10">
+                        </div>
+                      </div>
+                    </>
+                  ) : idx === 1 ? (
+                    <>
+                      <Image
+                        src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800&h=1200&auto=format&fit=crop"
+                        alt="VR Technology Preview"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div className="w-20 h-6 rounded-full bg-white/20 shadow-xl border border-white/30 backdrop-blur-md bg-gradient-to-r from-white/25 to-white/10">
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&h=1200&auto=format&fit=crop"
+                        alt="AI Technology"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div className="w-20 h-6 rounded-full bg-white/20 shadow-xl border border-white/30 backdrop-blur-md bg-gradient-to-r from-white/25 to-white/10">
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
@@ -426,11 +462,12 @@ export default function Home() {
           <div className="flex-1 w-full lg:max-w-xl">
             <div className="relative h-64 sm:h-72 lg:h-80 rounded-3xl bg-gradient-to-br from-sky-200/80 via-white to-slate-100 border border-white/30 shadow-2xl overflow-hidden">
               <Image
-                src="/asif mollik ceo .png"
+                src="/asif%20mollik%20ceo%20.png"
                 alt="Asif Mollik - CEO of Alphainno"
                 fill
                 className="object-cover rounded-3xl object-[center_20%]"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
