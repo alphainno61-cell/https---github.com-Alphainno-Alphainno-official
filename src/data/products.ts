@@ -2,21 +2,45 @@ import type { Product } from "@/components/ProductCard";
 
 export const products: Product[] = [
   {
-    id: "cloud-platform",
-    name: "Cloud Platform",
-    tagline: "Deploy, scale, and observe with zero ops.",
-    href: "/products/cloud-platform",
+    id: "alpha-team",
+    name: "Alpha Team",
+    tagline: "Collaborative team management and productivity tools.",
+    href: "/products/alpha-team",
   },
   {
-    id: "ai-suite",
-    name: "AI Suite",
-    tagline: "Production AI tools for model lifecycle management.",
-    href: "/products/ai-suite",
+    id: "alpha-dashboard",
+    name: "Alpha Dashboard",
+    tagline: "Real-time analytics and business intelligence platform.",
+    href: "/products/alpha-dashboard",
   },
   {
-    id: "devx",
-    name: "DevX",
-    tagline: "Developer experience tooling for fast iteration.",
-    href: "/products/devx",
+    id: "alpha-erp",
+    name: "Alpha ERP",
+    tagline: "Comprehensive enterprise resource planning solution.",
+    href: "/products/alpha-erp",
+  },
+  {
+    id: "uddoktanet",
+    name: "Uddoktanet",
+    tagline: "Empowering entrepreneurs with digital solutions.",
+    href: "/products/uddoktanet",
+  },
+  {
+    id: "biddapath",
+    name: "Biddapath",
+    tagline: "Smart education management system for modern learning.",
+    href: "/products/biddapath",
+  },
+  {
+    id: "alphasearch",
+    name: "AlphaSearch",
+    tagline: "Advanced search engine with AI-powered insights.",
+    href: "/products/alphasearch",
+  },
+  {
+    id: "alpha-vendor",
+    name: "Alpha Vendor",
+    tagline: "Complete vendor management and procurement platform.",
+    href: "/products/alpha-vendor",
   },
 ];

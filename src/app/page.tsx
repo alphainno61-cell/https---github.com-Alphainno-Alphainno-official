@@ -1,5 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const iconLinks = [
   { label: "Software", color: "bg-blue-100 text-blue-700" },
@@ -17,6 +24,7 @@ const quickTiles = [
   { title: "Uddoktanet", tag: "Product" },
   { title: "Biddapath", tag: "Product" },
   { title: "AlphaSearch", tag: "Product" },
+  { title: "Alpha Vendor", tag: "Product" },
 ];
 
 const searchCards = [
@@ -338,19 +346,85 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white border border-gray-100 shadow-sm p-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <section className="rounded-2xl bg-white border border-gray-100 shadow-sm p-6 overflow-visible">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={16}
+          slidesPerView={2}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 16,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            1280: {
+              slidesPerView: 6,
+              spaceBetween: 24,
+            },
+          }}
+          className="product-tiles-slider"
+        >
           {quickTiles.map((tile) => (
-            <div
-              key={tile.title}
-              className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center hover:border-gray-300"
-            >
-              <div className="mx-auto mb-3 h-10 w-10 rounded-lg bg-white shadow-sm" />
-              <p className="text-sm font-semibold text-gray-900">{tile.title}</p>
-              <p className="text-xs text-gray-600">{tile.tag}</p>
-            </div>
+            <SwiperSlide key={tile.title}>
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center hover:border-gray-300 transition-all hover:shadow-md h-full">
+                <div className="mx-auto mb-3 h-10 w-10 rounded-lg bg-white shadow-sm" />
+                <p className="text-sm font-semibold text-gray-900">{tile.title}</p>
+                <p className="text-xs text-gray-600">{tile.tag}</p>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+        <style jsx global>{`
+          .product-tiles-slider {
+            padding: 20px 10px 40px 10px;
+            position: relative;
+          }
+
+          /* Pagination bullets styling */
+          .product-tiles-slider .swiper-pagination {
+            bottom: 8px;
+          }
+
+          .product-tiles-slider .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #d1d5dc;
+            opacity: 0.6;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin: 0 4px;
+          }
+
+          .product-tiles-slider .swiper-pagination-bullet-active {
+            width: 24px;
+            background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+            opacity: 1;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+          }
+
+          /* Media queries for smaller screens */
+          @media (max-width: 768px) {
+            .product-tiles-slider .swiper-pagination-bullet {
+              width: 6px;
+              height: 6px;
+              margin: 0 3px;
+            }
+
+            .product-tiles-slider .swiper-pagination-bullet-active {
+              width: 16px;
+            }
+          }
+        `}</style>
       </section>
 
       <section className="space-y-6">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ProductCard from "@/components/ProductCard";
+import ProductSlider from "@/components/ProductSlider";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -9,16 +9,17 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">Products</h1>
-      <p className="mt-2 text-gray-600">
-        Our product portfolio helps teams build, ship, and scale.
-      </p>
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
+    <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Our Products
+        </h1>
+        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          Discover our comprehensive suite of innovative software solutions designed to help teams build, ship, and scale with confidence.
+        </p>
       </div>
+      
+      <ProductSlider products={products} />
     </div>
   );
 }
